@@ -2,8 +2,8 @@ package Tema4_;
 
 public class IIfElseIf {
     public static void main(String[] args) {
-        int edad = 21;
-        int dinero = 30000;
+        int edad = 12;
+        int dinero = 20;
         int entrada = 30;
 
 
@@ -15,4 +15,5 @@ public class IIfElseIf {
             System.out.println("Menor de edad, no puedes pasar");
         }
     }
+
 }

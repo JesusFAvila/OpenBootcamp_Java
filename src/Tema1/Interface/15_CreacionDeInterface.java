@@ -1,6 +1,6 @@
 package Tema1.Interface;
 
-import com.CursoJava.Coche; //importamos clase Coche porque está en otro paquete.
+//import com.CursoJava.Coche; //importamos clase Coche porque está en otro paquete.
 
 public class InterfacesMain {
     public static void main(String[] args) {

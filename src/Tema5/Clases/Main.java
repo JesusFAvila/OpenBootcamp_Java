@@ -3,10 +3,16 @@ package Tema5.Clases;
 public class Main {
     public static void main(String[] args) {
         //Creación de objeto
-        Vehiculo coche2 = new Vehiculo("mercedes","Benz","Audi",300.5,"Gris Metalizado",false,2022,0.0);
-        Vehiculo coche1 = new Vehiculo("Ford", "Mondeo","Ford",300.0,"Rojo",true,2022, 0.0);
+        Motor motorGti = new Motor(70,"cuatro tiempos","diesel",true,250);
+        Motor motorBenz = new Motor(120,"cuatro tiempos","gasolina",false,200);
+        Vehiculo coche2 = new Vehiculo("mercedes","Benz","Audi",300.5,"Gris Metalizado",false,2022,0.0,motorBenz );
+        Vehiculo coche1 = new Vehiculo("Ford", "Mondeo","Ford",300.0,"Rojo",true,2022, 0.0,motorGti);
         System.out.println(coche1.marca);
         System.out.println(coche2.modeSport);
+        System.out.println(coche1.motor.velMax);
+        System.out.println(coche2.motor.velMax);
+
+
 
         System.out.println("Velocidad coche1: "+coche1.velocidad + "km/h");
         coche1.acelerar(100);

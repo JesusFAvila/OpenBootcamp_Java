@@ -1,5 +1,7 @@
 package Tema5.Clases;
 
+import Tema5.Herencia.Motocicleta;
+
 public class Main {
     public static void main(String[] args) {
         //Creación de objeto
@@ -12,6 +14,12 @@ public class Main {
         System.out.println(coche1.motor.velMax);
         System.out.println(coche2.motor.velMax);
 
+        Motocicleta ducatiMonster = new Motocicleta(true,"Disco",true,false);
+        ducatiMonster.marca = "Ducati";
+        ducatiMonster.modelo = "Monster";
+
+        System.out.println(ducatiMonster.marca);
+
 
 
         System.out.println("Velocidad coche1: "+coche1.velocidad + "km/h");
@@ -23,7 +31,7 @@ public class Main {
         System.out.println("Velocidad coche2: "+coche2.velocidad +"km/h");
 
 
-
+        System.out.println("FIN DE PROGRAMA");
 
     }
 }

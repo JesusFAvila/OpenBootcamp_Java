@@ -3,14 +3,14 @@ package Tema5.Clases;
 public class Vehiculo {
 
         //1- Atributos
-        String marca;
-        String modelo;
-        String fabricante;
-        Double Caballos;
-        String color;
-        boolean modeSport;
-        int year;
-        Double velocidad;
+        protected String marca;
+        protected String modelo;
+        protected String fabricante;
+        protected Double Caballos;
+        protected String color;
+        protected boolean modeSport;
+        protected int year;
+        protected Double velocidad;
         //Podemos aplicar la encapsulación a atributos mediante private y solo se podrá hacer uso desde el método main
         private String atributoEncapsulado;
         Motor motor; //creamos motor como objeto en la calse Motor
@@ -33,8 +33,6 @@ public class Vehiculo {
         //3- Métodos
         public void acelerar( int cantidad){
             this.velocidad += cantidad;
-
-
 
     }
 }

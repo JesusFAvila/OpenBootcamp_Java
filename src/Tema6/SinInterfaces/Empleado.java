@@ -1,4 +1,4 @@
-package Tema6;
+package Tema6.SinInterfaces;
 
 public class Empleado {
     //1- ATRIBUTOS

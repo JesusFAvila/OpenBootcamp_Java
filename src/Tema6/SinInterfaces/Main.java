@@ -1,4 +1,4 @@
-package Tema6;
+package Tema6.SinInterfaces;
 
 import java.util.List;
 

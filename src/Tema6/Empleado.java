@@ -16,8 +16,19 @@ public class Empleado {
         this.apellidos = apellidos;
         this.edad = edad;
         this.salario = salario;
+        this.empleo = empleo;
     }
 
     //3- MÉTODOS
-
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", edad=" + edad +
+                ", salario=" + salario +
+                ", activoBaja=" + activoBaja +
+                ", empleo='" + empleo + '\'' +
+                '}';
+    }
 }

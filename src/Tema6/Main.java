@@ -1,5 +1,7 @@
 package Tema6;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         //INTERFACES
@@ -12,10 +14,20 @@ public class Main {
         Empleado empleado4 = new Empleado("Bárbara", "Fernández", 28, 1200,true,"Recursos Humanos");
         Empleado empleado5 = new Empleado("Jaime", "Espigares", 31, 1600,true,"Funcionario del Estado");
 
+        //GUARDAR EMPLEADOS
         empleadoCRUD.guardarEmpleados(empleado1);
         empleadoCRUD.guardarEmpleados(empleado2);
         empleadoCRUD.guardarEmpleados(empleado3);
         empleadoCRUD.guardarEmpleados(empleado4);
         empleadoCRUD.guardarEmpleados(empleado5);
+
+        //MOSTRAMOS DATOS DE EMPLEADO ESPECIFICO GRACIAS AL TOSTRING() DE LA CLASE EMPLEADO
+        System.out.println(empleado5);
+
+        //CONSULTAR EMPLEADOS
+        List<Empleado>empleados = empleadoCRUD.consultarEmpelados();
+        //System.out.println(empleados);
     }
+
+
 }

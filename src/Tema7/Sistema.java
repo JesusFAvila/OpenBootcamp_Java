@@ -1,5 +1,7 @@
 package Tema7;
 
+import java.io.PrintStream;
+
 public class Sistema {
 
     String tipoPc;

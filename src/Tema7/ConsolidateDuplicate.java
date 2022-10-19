@@ -19,10 +19,11 @@ public class ConsolidateDuplicate {
     }
 
     private void sendMessage(){
-        System.out.println("Enviando mensaje...");
+        Sistema.out.println("Enviando mensaje...");
     }
 
     private boolean isElegibleExtraSalary() {
+        return false;
     }
 
 

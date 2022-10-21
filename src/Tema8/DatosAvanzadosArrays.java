@@ -40,8 +40,47 @@ public class DatosAvanzadosArrays {
         }
 
         for (int i = 0; i <= arrayString.length; i++){
-            System.out.println("Forma larga de recorrer un array mediante un for: "+ arrayString[i] + "En posición: " + i);
+            //System.out.println("Forma larga de recorrer un array mediante un for: "+ arrayString[i] + "En posición: " + i);
         }
+
+        //ARRAY BIDIMENSIONALES
+        //El primer elemento es el numero de fila y el segundo es el número de columna
+        int arrayBidi [][] = new int[2][4];
+        //COLUMNAS
+        //El orden seria: primera fila primera columna
+        arrayBidi[0][0] = 1;
+        //El orden seria: primera fila primera columna
+        arrayBidi[0][1] = 2;
+        //El orden seria: primera fila primera columna
+        arrayBidi[0][2] = 3;
+        //El orden seria: primera fila primera columna
+        arrayBidi[0][3] = 4;
+
+        //FILAS
+        //El orden seria: SEGUNDA fila primera columna
+        arrayBidi[1][0] = 10;
+        //El orden seria: SEGUNDA fila segunda columna
+        arrayBidi[1][1] = 20;
+        //El orden seria: SEGUNDA fila tercera columna
+        arrayBidi[1][2] = 30;
+        //El orden seria: SEGUNDA fila cuarta columna
+        arrayBidi[1][3] = 40;
+
+        //Por cada dimension se mete un for en otro for
+
+        for (int i = 0; i< arrayBidi.length; i++) {
+            System.out.println("El array bidimensional vale: " + i);
+            //mostrar el contenido de cada columna
+            for (int j = 0; j < arrayBidi[i].length; j++) {
+                System.out.println("Estoy en i = "+ i + ", j = "+ j);
+                System.out.println(arrayBidi[i][j]);
+            }
+        }
+
+
+
+
+
     }
 
 

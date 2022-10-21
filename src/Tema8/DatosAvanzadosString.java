@@ -1,6 +1,6 @@
 package Tema8;
 
-public class DatosAvanzados {
+public class DatosAvanzadosString {
     public static void main(String[] args) {
 
         String cadenaTexto = "Esto es una cadena de texto";

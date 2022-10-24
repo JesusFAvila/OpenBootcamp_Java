@@ -57,11 +57,32 @@ public class DatosAvanzadosVectores {
         vectorIntLimit.add(23);
         vectorIntLimit.add(24);
 
-
         System.out.println
                 ("Datos del vectorIntLimit: " + vectorIntLimit);
         System.out.println
                 ("Comprobamos el capacidad del vectorIntLimit: " + vectorIntLimit.capacity() + " y de tamaño: " + vectorIntLimit.size());
 
+        //Comparar vectores mediante equals()
+        Vector <Integer> vectorComparate1 = new Vector<Integer>();
+        vectorComparate1.add(1);
+        vectorComparate1.add(2);
+        vectorComparate1.add(3);
+        vectorComparate1.add(4);
+        vectorComparate1.add(5);
+        vectorComparate1.add(6);
+
+        Vector <Integer> vectorComparate2 = new Vector<Integer>();
+        vectorComparate2.add(1);
+        vectorComparate2.add(2);
+        vectorComparate2.add(3);
+        vectorComparate2.add(4);
+        vectorComparate2.add(5);
+        vectorComparate2.add(6);
+
+        boolean resultado = vectorComparate1.equals(vectorComparate2);
+        System.out.println
+                ("El resultado de la comparación es: " + resultado);
     }
+
+
 }

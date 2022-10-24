@@ -105,5 +105,21 @@ public class DatosAvanzadosVectores {
             System.out.println
                     ("Añadiendo dos numeros al vector, el valor es: " + vectorComparate2.get(i) + " En posición: " + i);
         }
+
+        //Decrecer un vector de forma segura mediante trimtosize
+        Vector <Integer> vectorDecrecer = new Vector<Integer>(5,2);
+        vectorDecrecer.add(1);
+        vectorDecrecer.add(2);
+        vectorDecrecer.add(3);
+        vectorDecrecer.add(4);
+        vectorDecrecer.add(5);
+        vectorDecrecer.add(6);
+        System.out.println
+                ("VectorDecrecer Capacidad: " + vectorDecrecer.capacity() + " Tamaño: " + vectorDecrecer.size());
+
+        vectorDecrecer.trimToSize();
+        //reduce la capacidad hasta su tamaño real, así conseguimos ahorrar/liberar memoria.
+        System.out.println
+                ("VectorDecrecer Capacidad: " + vectorDecrecer.capacity() + " Tamaño: " + vectorDecrecer.size());
     }
 }

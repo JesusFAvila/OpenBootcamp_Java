@@ -77,6 +77,13 @@ public class DatosAvanzadosArrays {
             }
         }
 
+        //Otra forma de inicialiar un array bidimensional
+        //2 filas 6 columnas
+        int arrayBidiDos [][] = {
+                {1,2,3,4,5,6},
+                {10,20,30}
+        };
+
 
 
 

@@ -8,6 +8,9 @@ public class DatosAvanzadosVectores {
         //A diferencia del array no hace falta asignarle un tamaño al principio o al final.
         //Tienen dos propiedades el tamaño (.size) y la capacidad (.capacity)
         //La capacidad del vector inicialmente es siempre 10 (Capacidad real del array subyacente), pero aumentará de 10 en 10 progresivamente.
+        //Podemos especificar la capacidad el vector y el incremento al declarar el vector: ejemplo con 30 de capacidad de inicial e incremento de 12
+        //    Vector <Integer> vectorInt = new Vector<Integer>(30,12);
+
 
         //VECTOR INT
         Vector <Integer> vectorInt = new Vector<Integer>();
@@ -49,8 +52,16 @@ public class DatosAvanzadosVectores {
         System.out.println
                 ("Comprobamos el capacidad del vectorString: " + vectorString.capacity() + " y de tamaño: " + vectorString.size());
 
+        //VECTOR INT LIMITADO EN CAPACIDAD
+        Vector <Integer> vectorIntLimit = new Vector<Integer>(1,50);
+        vectorIntLimit.add(23);
+        vectorIntLimit.add(24);
 
 
+        System.out.println
+                ("Datos del vectorIntLimit: " + vectorIntLimit);
+        System.out.println
+                ("Comprobamos el capacidad del vectorIntLimit: " + vectorIntLimit.capacity() + " y de tamaño: " + vectorIntLimit.size());
 
     }
 }

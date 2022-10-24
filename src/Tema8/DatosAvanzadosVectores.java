@@ -3,14 +3,12 @@ package Tema8;
 import java.util.Vector;
 
 public class DatosAvanzadosVectores {
-
     public static void main(String[] args) {
         //A diferencia del array no hace falta asignarle un tamaño al principio o al final.
         //Tienen dos propiedades el tamaño (.size) y la capacidad (.capacity)
         //La capacidad del vector inicialmente es siempre 10 (Capacidad real del array subyacente), pero aumentará de 10 en 10 progresivamente.
         //Podemos especificar la capacidad el vector y el incremento al declarar el vector: ejemplo con 30 de capacidad de inicial e incremento de 12
         //    Vector <Integer> vectorInt = new Vector<Integer>(30,12);
-
 
         //VECTOR INT
         Vector <Integer> vectorInt = new Vector<Integer>();
@@ -62,7 +60,7 @@ public class DatosAvanzadosVectores {
         System.out.println
                 ("Comprobamos el capacidad del vectorIntLimit: " + vectorIntLimit.capacity() + " y de tamaño: " + vectorIntLimit.size());
 
-        //Comparar vectores mediante equals()
+        //COMPARAR VECTORES mediante equals()
         Vector <Integer> vectorComparate1 = new Vector<Integer>();
         vectorComparate1.add(1);
         vectorComparate1.add(2);
@@ -82,7 +80,30 @@ public class DatosAvanzadosVectores {
         boolean resultado = vectorComparate1.equals(vectorComparate2);
         System.out.println
                 ("El resultado de la comparación es: " + resultado);
+        
+        //RECORRER UN VECTOR
+        //forma corta
+        for (int i : vectorComparate2){
+            System.out.println
+                    ("Recorriendo el vector mediante for corto:" +  i);
+        }
+
+        //forma larga
+        for (int i = 0; i < vectorComparate1.size(); i++){
+            System.out.println
+                    ("Recorriendo el vector mediante for largo: " + vectorComparate1.get(i));
+            //System.out.println("Recorriendo el vector mediante for largo: " + i);
+        }
+
+        //añadiendo dos numeros mas mediante un if
+        for (int i = 0 ; i < vectorComparate2.size(); i++){
+            //Si el resultado de dividir i entre 2 es 0 el resto es 0. Si el resultado es 0 elimina el elemento del vestor.
+            if(i % 2 == 0){
+                vectorComparate2.remove(i);
+                continue;
+            }
+            System.out.println
+                    ("Añadiendo dos numeros al vector, el valor es: " + vectorComparate2.get(i) + " En posición: " + i);
+        }
     }
-
-
 }

@@ -33,6 +33,15 @@ public class DatosAvanzadosArrayList {
                     ("La posicion es: " + i);
         }
 
+        //Convertir un arraylist en un array mediante size para utilizar el tamaño del arraylist
+        String array[] = new String[listaString.size()];
+        for (int i=0 ; i< listaString.size(); i++ ){
+            array[i] = listaString.get(i);
+        }
+        for (String elemento : array){
+            System.out.println("Elemento es: " + elemento);
+        }
+
 
 
 

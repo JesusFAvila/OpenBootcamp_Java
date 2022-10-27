@@ -1,6 +1,7 @@
 package Tema8;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class DatosAvanzadosMaps {
     public static void main(String[] args) {
@@ -29,15 +30,21 @@ public class DatosAvanzadosMaps {
                 ("Utilizamos el metodo .get " + mapPrimitivo .get("clave3"));
 
         //Reemplazar un valor mediante .replace
-        System.out.println(mapPrimitivo .replace("clave2", 1));
         System.out.println
-                ("Utilizamos el metodo .replace " + mapPrimitivo .get("clave2"));
+                ("Clave2: " + mapPrimitivo.get("clave2"));
+        mapPrimitivo .replace("clave2", 1);
+        System.out.println
+                ("Clave2: " + mapPrimitivo.get("clave2"));
 
+        //Eliminar mediante .remove
+        System.out.println("Mapa en su totalidad: " + mapPrimitivo);
+        mapPrimitivo.remove("clave2");
+        System.out.println("Clave 2 eliminada del map: " + mapPrimitivo);
 
-
-
-
-
-
+        //Recorrer un mapa:
+        for (Map.Entry elemento : mapPrimitivo.entrySet()) {
+            System.out.println
+                    ("Elemento: " + elemento.getKey() + " con clave: "+ elemento.getValue());
+        }
     }
 }

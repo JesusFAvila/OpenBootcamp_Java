@@ -1,9 +1,10 @@
 package Tema8;
 
 import java.util.Scanner;
-
 public class ErrorRunTime {
     public static void main(String[] args) {
+        funcionDivide(20,0);
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduce dos números: ");
         int numero1 = scanner.nextInt();
@@ -30,5 +31,17 @@ public class ErrorRunTime {
         }
 
     }
+    public static void funcionDivide(Integer numeroA, Integer numeroB) throws ArithmeticException {
+        int resultadoDivision = 0;
+        try{
+            resultadoDivision=numeroA / numeroB;
+        }catch (ArithmeticException e){
+            throw new ArithmeticException();
+        }
+        System.out.println(resultadoDivision);
+    }
 
-}
+
+
+
+    }

@@ -1,9 +1,13 @@
 package Tema8;
 
+import java.io.IOException;
 import java.util.Scanner;
 public class ErrorRunTime {
     public static void main(String[] args) {
-        funcionDivide(20,0);
+        try{funcionDivide(20,0);
+        }catch (Exception e){
+            System.out.println("ArithmeticException");
+        }
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduce dos números: ");
@@ -31,12 +35,12 @@ public class ErrorRunTime {
         }
 
     }
-    public static void funcionDivide(Integer numeroA, Integer numeroB) throws ArithmeticException {
+    public static void funcionDivide(Integer numeroA, Integer numeroB) throws ArithmeticException, IOException{
         int resultadoDivision = 0;
         try{
             resultadoDivision=numeroA / numeroB;
         }catch (ArithmeticException e){
-            throw new ArithmeticException();
+            throw new IOException();
         }
         System.out.println(resultadoDivision);
     }

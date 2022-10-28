@@ -2,8 +2,9 @@ package Tema8;
 
 import java.util.HashMap;
 import java.util.Map;
-@SuppressWarnings("rawtypes")
+//@SuppressWarnings("rawtypes")
 //Utilizamos SupressWarnings para eliminar aviso de error: Raw use of parameterized class 'Map.Entry'
+//Lo solucionamos correctamente añadiendo a la variable elementos elementos de tipo String e Integer
 public class DatosAvanzadosMaps {
     public static void main(String[] args) {
         //MAPAS / ARRAY ASOCIATIVO
@@ -44,7 +45,7 @@ public class DatosAvanzadosMaps {
         System.out.println("Clave 2 eliminada del map: " + mapPrimitivo);
 
         //Recorrer un mapa:
-        for (Map.Entry elemento : mapPrimitivo.entrySet()) {
+        for ( Map.Entry <String, Integer> elemento : mapPrimitivo.entrySet()) {
             System.out.println
                     ("Elemento: " + elemento.getKey() + " con clave: "+ elemento.getValue());
         }

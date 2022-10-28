@@ -2,7 +2,8 @@ package Tema8;
 
 import java.util.HashMap;
 import java.util.Map;
-
+@SuppressWarnings("rawtypes")
+//Utilizamos SupressWarnings para eliminar aviso de error: Raw use of parameterized class 'Map.Entry'
 public class DatosAvanzadosMaps {
     public static void main(String[] args) {
         //MAPAS / ARRAY ASOCIATIVO
@@ -12,7 +13,7 @@ public class DatosAvanzadosMaps {
         //En el ejemplo vemos el tiempo de dato String e Integer: Esto significa que mi mapa es un diccionario cuyas -
             // claves van a ser cadenas de texto y los valores asociados a cada una de esas claves van a ser un entero.
         //Los HashMap tienen una peculiaridad y es que no podemos tener la clave duplicada.
-        HashMap<String, Integer> mapPrimitivo = new HashMap<String, Integer>();
+        HashMap<String, Integer> mapPrimitivo = new HashMap<>();
         //Añadir elemento al HashMap mediante .put
         //Utilizaremos los dos parametros, la clave y el valor
         mapPrimitivo.put("clave1", 120);
@@ -22,7 +23,8 @@ public class DatosAvanzadosMaps {
 
         //El valor se sobreescribe mediante .put
         mapPrimitivo.put("clave4", 11);
-        mapPrimitivo.put("clave4", 22);
+        //mapPrimitivo.put("clave4", 22);
+        //Con el .put podemos pisar valores.
         System.out.println(mapPrimitivo);
 
         //Método para consultar una clave determinada mediante.get

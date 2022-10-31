@@ -1,16 +1,24 @@
 package Tema9;
 
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
-import java.io.PrintWriter;
+import java.io.*;
 
 public class ImprimirPrintStream {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         //PrintStram: genera datos apra imprimir por pantalla
         System.out.println("algo");
 
         //PrintWriter Escribe sobre documentos.
         PrintStream info = new PrintStream("input.txt");
         info.println("Escribiendo documento con PrintStream");
+
+        //Leer y copiar ficheros:
+        //LEER:
+        InputStream in = new FileInputStream("input.txt");
+        byte datos[] =  in.readAllBytes();
+
+        //ESCRIBIR: CREAR Y COPIAR
+        PrintStream out = new PrintStream("destino.txt");
+        out.write(datos);
+
     }
 }

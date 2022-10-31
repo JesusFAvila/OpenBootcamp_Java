@@ -1,11 +1,13 @@
 package Tema9;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class BufferInputStream {
     public static void main(String[] args) {
         //clase BufferedInputStream
         //BufferedInputStream No trabaja con ficheros trabaja con entradas
+        Scanner scanner = new Scanner(System.in);
         try {
             //Fichero con el que quiero trabajar: input.txt
             InputStream fichero = new FileInputStream("input.txt");

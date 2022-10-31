@@ -13,11 +13,12 @@ public class EntradaInputStream {
             //Fichero con el que quiero trabajar: input.txt
             InputStream fichero = new FileInputStream("input.txt");
             try {
-                //Dónde quiero el fichero: variable datos
-                byte[] datos = fichero.readAllBytes();
-                //Mostrar datos mediante for:
-                for (byte dato : datos) {
+                int dato = fichero.read();
+                //Detener bucle while en el último elemento
+                while (dato != -1){
+                    //EOF = END OF FILE
                     System.out.println((char)dato);
+                    dato = fichero.read();
                 }
             }catch (IOException e){
                 System.out.println("Imposible leer el fichero " + e.getMessage());

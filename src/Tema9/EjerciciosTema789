@@ -1,0 +1,104 @@
+package Tema9;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Vector;
+
+public class EjerciciosTema789 {
+    public static void main(String[] args) {
+        System.out.println(" - ");
+        System.out.println("Ejercicio 1: Crea un array unidimensional de Strings y recórrelo, mostrando únicamente sus valores:");
+        ejercicio1();
+
+        System.out.println(" - ");
+        System.out.println("Ejercicio 2: Crea un array bidimensional de enteros y recórrelo, mostrando la posición y el valor de cada elemento en ambas dimensiones:");
+        ejercicio2();
+
+        System.out.println(" - ");
+        System.out.println("Ejercicio 3: Crea un Vector del tipo de dato que prefieras, y añádele 5 elementos. Elimina el 2o y 3er elemento y muestra el resultado final:");
+        ejercicio3();
+
+        System.out.println(" - ");
+        System.out.println("Ejercicio 4: Indica cuál es el problema de utilizar un Vector con la capacidad por defecto si tuviésemos 1000 elementos para ser añadidos al mismo:");
+        System.out.println("Al tener un Vector con capacidad por defecto, éste se redimensionará automáticamente cada vez que se añada un nuevo elemento, lo cual implicará un coste computacional adicional.");
+
+        System.out.println(" - ");
+        System.out.println("Ejercicio 5: Crea un ArrayList de tipo String, con 4 elementos. Cópialo en una LinkedList. Recorre ambos mostrando únicamente el valor de cada elemento: ");
+        ejercicio5();
+
+
+
+    }
+
+    public static void ejercicio1(){
+        //Crea un array unidimensional de Strings y recórrelo, mostrando únicamente sus valores.
+        String arrayName [] = {"Jesús Fernández", "Jose Antonio Arguello", "Maria Luisa López", "Clara Vílchez" , "Mauricio Alarcón", "María Lefebre"};
+        for (int i = 0; i < arrayName.length; i++) {
+            System.out.println("Nombre del alumno: "+ arrayName[i] + ", en la posición: " + i);
+        }
+    }
+
+    public static void ejercicio2(){
+        //Crea un array bidimensional de enteros y recórrelo, mostrando la posición y el valor de cada elemento en ambas dimensiones.
+        int arrayBidi [][] = new int[2][4];
+        //COLUMNA
+        arrayBidi[0][0] = 1;
+        arrayBidi[0][1] = 2;
+        arrayBidi[0][2] = 3;
+        arrayBidi[0][3] = 4;
+        //FILA
+        arrayBidi[1][0] = 10;
+        arrayBidi[1][1] = 20;
+        arrayBidi[1][2] = 30;
+        arrayBidi[1][3] = 40;
+
+        for (int i = 0; i< arrayBidi.length; i++) {
+            System.out.println("El array bidimensional vale: " + i);
+            //mostrar el contenido de cada columna
+            for (int j = 0; j < arrayBidi[i].length; j++) {
+                System.out.println("Estoy en i = "+ i + ", j = "+ j);
+                System.out.println(arrayBidi[i][j]);
+            }
+        }
+    }
+
+    public static void ejercicio3(){
+        //Crea un "Vector" del tipo de dato que prefieras, y añádele 5 elementos. Elimina el 2o y 3er elemento y muestra el resultado final.
+        Vector<String> vectorModulos = new Vector<String>();
+        vectorModulos.add("Módulo 01");
+        vectorModulos.add("Módulo 02");
+        vectorModulos.add("Módulo 03");
+        vectorModulos.add("Módulo 04");
+        vectorModulos.add("Módulo 05");
+        System.out.println("Listado de módulos: " + vectorModulos);
+
+        vectorModulos.remove("Módulo 02");
+        vectorModulos.remove("Módulo 03");
+        System.out.println("Listado de módulos: " + vectorModulos);
+    }
+    public static void ejercicio5(){
+        //Crea un ArrayList de tipo String, con 4 elementos. Cópialo en una LinkedList. Recorre ambos mostrando únicamente el valor de cada elemento.
+        ArrayList<String> listaElementosArray = new ArrayList<String>();
+        listaElementosArray.add("Elemento 1");
+        listaElementosArray.add("Elemento 2");
+        listaElementosArray.add("Elemento 3");
+        listaElementosArray.add("Elemento 4");
+        for (int i = 0 ; i < listaElementosArray.size() ; i ++) {
+            System.out.println("Los elementos del ArrayList son: " + listaElementosArray.get(i));
+        }
+        LinkedList<String> listaElementosLinked = new LinkedList<String>();
+        listaElementosLinked.add("Elemento 1");
+        listaElementosLinked.add("Elemento 2");
+        listaElementosLinked.add("Elemento 3");
+        listaElementosLinked.add("Elemento 4");
+        for (int i = 0 ; i < listaElementosLinked.size() ; i ++) {
+            System.out.println("Los elementos del LinkedList son: " + listaElementosLinked.get(i));
+        }
+
+
+    }
+
+
+
+
+    }

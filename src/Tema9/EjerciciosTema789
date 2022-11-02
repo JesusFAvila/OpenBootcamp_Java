@@ -26,6 +26,9 @@ public class EjerciciosTema789 {
         System.out.println("Ejercicio 5: Crea un ArrayList de tipo String, con 4 elementos. Cópialo en una LinkedList. Recorre ambos mostrando únicamente el valor de cada elemento: ");
         ejercicio5();
 
+        System.out.println(" - ");
+        System.out.println("Ejercicio 6: Crea un ArrayList de tipo int, y, utilizando un bucle rellénalo con elementos 1..10. A continuación, con otro bucle, recórrelo y elimina los numeros pares. Por último, vuelve a recorrerlo y muestra el ArrayList final. Si te atreves, puedes hacerlo en menos pasos, siempre y cuando cumplas el primer for de relleno.");
+        ejercicio6();
 
 
     }
@@ -94,11 +97,25 @@ public class EjerciciosTema789 {
         for (int i = 0 ; i < listaElementosLinked.size() ; i ++) {
             System.out.println("Los elementos del LinkedList son: " + listaElementosLinked.get(i));
         }
-
-
     }
 
-
-
-
+        public static void ejercicio6() {
+            //Crea un ArrayList de tipo int, y, utilizando un bucle rellénalo con elementos 1..10. A continuación, con otro bucle, recórrelo y elimina los numeros pares. Por último, vuelve a recorrerlo y muestra el ArrayList final. Si te atreves, puedes hacerlo en menos pasos, siempre y cuando cumplas el primer "for" de relleno.
+            ArrayList<Integer> listaInteger = new ArrayList<Integer>();
+            //Añadimos elementos int del 1 -10 mediante bucle for
+            for (int i = 0; i <= 10; i++) {
+                listaInteger.add(i);
+                System.out.println(listaInteger);
+            }
+    
+            //Recorremos el arraylist y eliminamos números pares (2,4,6,8,10)
+            for (int i = 0; i < listaInteger.size(); i++) {
+                if (listaInteger.get(i) % 2 == 0) {
+                    listaInteger.remove(i);
+                    System.out.println(listaInteger);
+                }
+            }
+    
+        }
+    
     }

@@ -1,9 +1,7 @@
 package Tema9;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Vector;
+import java.util.*;
 
 import static java.lang.System.in;
 import static java.lang.System.out;
@@ -28,6 +26,7 @@ public class EjerciciosTema789 {
 
         ejercicio8();
 
+        ejercicio9();
 
     }
 
@@ -146,7 +145,7 @@ public class EjerciciosTema789 {
         public static void ejercicio8 () throws IOException {
             //Utilizando InputStream y PrintStream, crea una función que reciba dos parámetros: "fileIn" y "fileOut". La tarea de la función será realizar la copia del fichero dado en el parámetro "fileIn" al fichero dado en "fileOut".
             out.println(" - ");
-            out.println("Utilizando InputStream y PrintStream, crea una función que reciba dos parámetros: \"fileIn\" y \"fileOut\". La tarea de la función será realizar la copia del fichero dado en el parámetro \"fileIn\" al fichero dado en \"fileOut\".");
+            out.println("Ejercicio 8: Utilizando InputStream y PrintStream, crea una función que reciba dos parámetros: \"fileIn\" y \"fileOut\". La tarea de la función será realizar la copia del fichero dado en el parámetro \"fileIn\" al fichero dado en \"fileOut\".");
 
             //PrintWriter Escribe sobre documentos.
             PrintStream fileIn = new PrintStream("readmore.txt");
@@ -161,7 +160,53 @@ public class EjerciciosTema789 {
             //ESCRIBIR: CREAR Y COPIAR
             PrintStream fileOut = new PrintStream("destinyReadmore.txt");
             fileOut.write(datos);
+        }
 
+
+        public static void ejercicio9()  throws IOException{
+            out.println(" - ");
+            out.println("Ejercicio 9: Sorpréndenos creando un programa de tu elección que utilice InputStream, PrintStream, excepciones, un HashMap y un ArrayList, LinkedList o array.");
+            out.println("El programa lee un archivo de texto y cuenta la cantidad de veces que aparece cada palabra en el texto. Luego, imprime una lista de todas las palabras y su respectivo conteo en orden alfabético:");
+            InputStream input = new FileInputStream("leeme.txt");
+            PrintStream output = new PrintStream("output.txt");
+            HashMap<String, Integer> map = new HashMap<>();
+            ArrayList<String> list = new ArrayList<>();
+
+            try {
+                int data = input.read();
+                while (data != -1) {
+                    StringBuilder sb = new StringBuilder();
+                    while (Character.isLetter((char) data)) {
+                        sb.append((char) data);
+                        data = input.read();
+                    }
+                    String word = sb.toString();
+                    if (!word.isEmpty()) {
+                        if (!map.containsKey(word)) {
+                            map.put(word, 1);
+                            list.add(word);
+                        } else {
+                            int count = map.get(word);
+                            map.put(word, count + 1);
+                        }
+                    }
+                    data = input.read();
+                }
+            } catch (IOException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+
+            Collections.sort(list);
+            for (String word : list) {
+                output.println(word + ": " + map.get(word));
+            }
+
+            try {
+                input.close();
+                output.close();
+            } catch (IOException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
 
         }
 

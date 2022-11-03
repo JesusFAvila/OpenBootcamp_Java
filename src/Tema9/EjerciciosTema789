@@ -20,6 +20,7 @@ public class EjerciciosTema789 {
 
         ejercicio6();
 
+        ejercicio7();
     }
 
     public static void ejercicio1(){
@@ -119,7 +120,20 @@ public class EjerciciosTema789 {
                     System.out.println(listaInteger);
                 }
             }
-
         }
-
+         public static void ejercicio7() {
+        //Crea una función DividePorCero. Esta, debe generar una excepción ("throws") a su llamante del tipo ArithmeticException que será capturada por su llamante (desde "main", por ejemplo). Si se dispara la excepción, mostraremos el mensaje "Esto no puede hacerse". Finalmente, mostraremos en cualquier caso: "Demo de código".
+             System.out.println(" - ");
+             System.out.println("Ejercicio 7: Crea una función DividePorCero. Esta, debe generar una excepción (\"throws\") a su llamante del tipo ArithmeticException que será capturada por su llamante (desde \"main\", por ejemplo). Si se dispara la excepción, mostraremos el mensaje \"Esto no puede hacerse\". Finalmente, mostraremos en cualquier caso: \"Demo de código\".");
+             try {
+                 int resultado = division(12, 2);
+                 System.out.println("El resultado de la división: " +resultado + " | Demo de código");
+             } catch (ArithmeticException e) {
+                 System.out.println("Esto no puede hacerse | Demo de código");
+             }
+         }
+        public static int division(int a, int b) throws ArithmeticException {
+        return a / b;
+        
+         }
     }

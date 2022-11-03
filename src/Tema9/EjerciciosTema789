@@ -1,43 +1,51 @@
 package Tema9;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
 
+import static java.lang.System.in;
+import static java.lang.System.out;
+
 public class EjerciciosTema789 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ejercicio1();
 
         ejercicio2();
 
         ejercicio3();
 
-        System.out.println(" - ");
-        System.out.println("Ejercicio 4: Indica cuál es el problema de utilizar un Vector con la capacidad por defecto si tuviésemos 1000 elementos para ser añadidos al mismo:");
-        System.out.println("Al tener un Vector con capacidad por defecto, éste se redimensionará automáticamente cada vez que se añada un nuevo elemento, lo cual implicará un coste computacional adicional.");
+        out.println(" - ");
+        out.println("Ejercicio 4: Indica cuál es el problema de utilizar un Vector con la capacidad por defecto si tuviésemos 1000 elementos para ser añadidos al mismo:");
+        out.println("Al tener un Vector con capacidad por defecto, éste se redimensionará automáticamente cada vez que se añada un nuevo elemento, lo cual implicará un coste computacional adicional.");
 
         ejercicio5();
 
         ejercicio6();
 
         ejercicio7();
+
+        ejercicio8();
+
+
     }
 
     public static void ejercicio1(){
         //Crea un array unidimensional de Strings y recórrelo, mostrando únicamente sus valores.
-        System.out.println(" - ");
-        System.out.println("Ejercicio 1: Crea un array unidimensional de Strings y recórrelo, mostrando únicamente sus valores:");
+        out.println(" - ");
+        out.println("Ejercicio 1: Crea un array unidimensional de Strings y recórrelo, mostrando únicamente sus valores:");
 
         String arrayName [] = {"Jesús Fernández", "Jose Antonio Arguello", "Maria Luisa López", "Clara Vílchez" , "Mauricio Alarcón", "María Lefebre"};
         for (int i = 0; i < arrayName.length; i++) {
-            System.out.println("Nombre del alumno: "+ arrayName[i] + ", en la posición: " + i);
+            out.println("Nombre del alumno: "+ arrayName[i] + ", en la posición: " + i);
         }
     }
 
     public static void ejercicio2(){
         //Crea un array bidimensional de enteros y recórrelo, mostrando la posición y el valor de cada elemento en ambas dimensiones.
-        System.out.println(" - ");
-        System.out.println("Ejercicio 2: Crea un array bidimensional de enteros y recórrelo, mostrando la posición y el valor de cada elemento en ambas dimensiones:");
+        out.println(" - ");
+        out.println("Ejercicio 2: Crea un array bidimensional de enteros y recórrelo, mostrando la posición y el valor de cada elemento en ambas dimensiones:");
 
         int arrayBidi [][] = new int[2][4];
         //COLUMNA
@@ -52,19 +60,19 @@ public class EjerciciosTema789 {
         arrayBidi[1][3] = 40;
 
         for (int i = 0; i< arrayBidi.length; i++) {
-            System.out.println("El array bidimensional vale: " + i);
+            out.println("El array bidimensional vale: " + i);
             //mostrar el contenido de cada columna
             for (int j = 0; j < arrayBidi[i].length; j++) {
-                System.out.println("Estoy en i = "+ i + ", j = "+ j);
-                System.out.println(arrayBidi[i][j]);
+                out.println("Estoy en i = "+ i + ", j = "+ j);
+                out.println(arrayBidi[i][j]);
             }
         }
     }
 
     public static void ejercicio3(){
         //Crea un "Vector" del tipo de dato que prefieras, y añádele 5 elementos. Elimina el 2o y 3er elemento y muestra el resultado final.
-        System.out.println(" - ");
-        System.out.println("Ejercicio 3: Crea un Vector del tipo de dato que prefieras, y añádele 5 elementos. Elimina el 2o y 3er elemento y muestra el resultado final:");
+        out.println(" - ");
+        out.println("Ejercicio 3: Crea un Vector del tipo de dato que prefieras, y añádele 5 elementos. Elimina el 2o y 3er elemento y muestra el resultado final:");
 
         Vector<String> vectorModulos = new Vector<String>();
         vectorModulos.add("Módulo 01");
@@ -72,16 +80,16 @@ public class EjerciciosTema789 {
         vectorModulos.add("Módulo 03");
         vectorModulos.add("Módulo 04");
         vectorModulos.add("Módulo 05");
-        System.out.println("Listado de módulos: " + vectorModulos);
+        out.println("Listado de módulos: " + vectorModulos);
 
         vectorModulos.remove("Módulo 02");
         vectorModulos.remove("Módulo 03");
-        System.out.println("Listado de módulos: " + vectorModulos);
+        out.println("Listado de módulos: " + vectorModulos);
     }
     public static void ejercicio5(){
         //Crea un ArrayList de tipo String, con 4 elementos. Cópialo en una LinkedList. Recorre ambos mostrando únicamente el valor de cada elemento.
-        System.out.println(" - ");
-        System.out.println("Ejercicio 5: Crea un ArrayList de tipo String, con 4 elementos. Cópialo en una LinkedList. Recorre ambos mostrando únicamente el valor de cada elemento: ");
+        out.println(" - ");
+        out.println("Ejercicio 5: Crea un ArrayList de tipo String, con 4 elementos. Cópialo en una LinkedList. Recorre ambos mostrando únicamente el valor de cada elemento: ");
 
         ArrayList<String> listaElementosArray = new ArrayList<String>();
         listaElementosArray.add("Elemento 1");
@@ -89,7 +97,7 @@ public class EjerciciosTema789 {
         listaElementosArray.add("Elemento 3");
         listaElementosArray.add("Elemento 4");
         for (int i = 0 ; i < listaElementosArray.size() ; i ++) {
-            System.out.println("Los elementos del ArrayList son: " + listaElementosArray.get(i));
+            out.println("Los elementos del ArrayList son: " + listaElementosArray.get(i));
         }
         LinkedList<String> listaElementosLinked = new LinkedList<String>();
         listaElementosLinked.add("Elemento 1");
@@ -97,43 +105,65 @@ public class EjerciciosTema789 {
         listaElementosLinked.add("Elemento 3");
         listaElementosLinked.add("Elemento 4");
         for (int i = 0 ; i < listaElementosLinked.size() ; i ++) {
-            System.out.println("Los elementos del LinkedList son: " + listaElementosLinked.get(i));
+            out.println("Los elementos del LinkedList son: " + listaElementosLinked.get(i));
         }
     }
 
         public static void ejercicio6() {
             //Crea un ArrayList de tipo int, y, utilizando un bucle rellénalo con elementos 1..10. A continuación, con otro bucle, recórrelo y elimina los numeros pares. Por último, vuelve a recorrerlo y muestra el ArrayList final. Si te atreves, puedes hacerlo en menos pasos, siempre y cuando cumplas el primer "for" de relleno.
-            System.out.println(" - ");
-            System.out.println("Ejercicio 6: Crea un ArrayList de tipo int, y, utilizando un bucle rellénalo con elementos 1..10. A continuación, con otro bucle, recórrelo y elimina los numeros pares. Por último, vuelve a recorrerlo y muestra el ArrayList final. Si te atreves, puedes hacerlo en menos pasos, siempre y cuando cumplas el primer for de relleno.");
+            out.println(" - ");
+            out.println("Ejercicio 6: Crea un ArrayList de tipo int, y, utilizando un bucle rellénalo con elementos 1..10. A continuación, con otro bucle, recórrelo y elimina los numeros pares. Por último, vuelve a recorrerlo y muestra el ArrayList final. Si te atreves, puedes hacerlo en menos pasos, siempre y cuando cumplas el primer for de relleno.");
 
             ArrayList<Integer> listaInteger = new ArrayList<Integer>();
             //Añadimos elementos int del 1 -10 mediante bucle for
             for (int i = 0; i <= 10; i++) {
                 listaInteger.add(i);
-                System.out.println(listaInteger);
+                out.println(listaInteger);
             }
 
             //Recorremos el arraylist y eliminamos números pares (2,4,6,8,10)
             for (int i = 0; i < listaInteger.size(); i++) {
                 if (listaInteger.get(i) % 2 == 0) {
                     listaInteger.remove(i);
-                    System.out.println(listaInteger);
+                    out.println(listaInteger);
                 }
             }
         }
          public static void ejercicio7() {
         //Crea una función DividePorCero. Esta, debe generar una excepción ("throws") a su llamante del tipo ArithmeticException que será capturada por su llamante (desde "main", por ejemplo). Si se dispara la excepción, mostraremos el mensaje "Esto no puede hacerse". Finalmente, mostraremos en cualquier caso: "Demo de código".
-             System.out.println(" - ");
-             System.out.println("Ejercicio 7: Crea una función DividePorCero. Esta, debe generar una excepción (\"throws\") a su llamante del tipo ArithmeticException que será capturada por su llamante (desde \"main\", por ejemplo). Si se dispara la excepción, mostraremos el mensaje \"Esto no puede hacerse\". Finalmente, mostraremos en cualquier caso: \"Demo de código\".");
+             out.println(" - ");
+             out.println("Ejercicio 7: Crea una función DividePorCero. Esta, debe generar una excepción (\"throws\") a su llamante del tipo ArithmeticException que será capturada por su llamante (desde \"main\", por ejemplo). Si se dispara la excepción, mostraremos el mensaje \"Esto no puede hacerse\". Finalmente, mostraremos en cualquier caso: \"Demo de código\".");
              try {
                  int resultado = division(12, 2);
-                 System.out.println("El resultado de la división: " +resultado + " | Demo de código");
+                 out.println("El resultado de la división: " +resultado + " | Demo de código");
              } catch (ArithmeticException e) {
-                 System.out.println("Esto no puede hacerse | Demo de código");
+                 out.println("Esto no puede hacerse | Demo de código");
              }
          }
         public static int division(int a, int b) throws ArithmeticException {
-        return a / b;
-        
-         }
+            return a / b;
+        }
+        public static void ejercicio8 () throws IOException {
+            //Utilizando InputStream y PrintStream, crea una función que reciba dos parámetros: "fileIn" y "fileOut". La tarea de la función será realizar la copia del fichero dado en el parámetro "fileIn" al fichero dado en "fileOut".
+            out.println(" - ");
+            out.println("Utilizando InputStream y PrintStream, crea una función que reciba dos parámetros: \"fileIn\" y \"fileOut\". La tarea de la función será realizar la copia del fichero dado en el parámetro \"fileIn\" al fichero dado en \"fileOut\".");
+
+            //PrintWriter Escribe sobre documentos.
+            PrintStream fileIn = new PrintStream("readmore.txt");
+            fileIn.println("Escribiendo documento con PrintStream para el ejercicio 8");
+
+            //Leer y copiar ficheros:
+            //LEER:
+            InputStream in = new FileInputStream("readmore.txt");
+            byte datos[] =  in.readAllBytes();
+            in.close();
+
+            //ESCRIBIR: CREAR Y COPIAR
+            PrintStream fileOut = new PrintStream("destinyReadmore.txt");
+            fileOut.write(datos);
+
+
+        }
+
+
     }
